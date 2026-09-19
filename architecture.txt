@@ -1,0 +1,57 @@
+SCALABLE AGENTIC SYSTEM
+
+User
+ |
+ v
+FastAPI / CLI
+ |
+ v
+Gemini Router
+ |
+ +-------------------+----------------------+
+ |                   |                      |
+ v                   v                      v
+API Route          RAG Tool          System Search
+ |                   |                      |
+ v                   v                      v
+Tool Registry      Knowledge Base       Tool Registry
+ |
+ v
+Pydantic Validation
+ |
+ v
+Tool Executor
+ |
+ v
+Mock PayPal APIs
+ |
+ v
+Response
+
+SCALING IDEA
+
+Instead of giving 500+ tools directly to Gemini:
+
+500+ tools
+   |
+   v
+Tool Registry / Search
+   |
+   v
+Relevant tools
+   |
+   v
+Gemini chooses the best tool
+   |
+   v
+Execute
+
+For production:
+- semantic vector search
+- LangGraph workflow
+- Redis/PostgreSQL state
+- real PayPal APIs
+- authentication
+- rate limiting
+- human approval for sensitive actions
+- LangSmith/observability
